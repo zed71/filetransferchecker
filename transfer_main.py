@@ -93,16 +93,12 @@ class File_Mover:
 
 
     def CheckFiles_Button(self):
-        #get values stored in entry widgets: source directory and destination directory
-        #replace the single forward slash with double forward slash for the python interpreter
         dir1 = self.entry1.get()
         dir1 = dir1.replace("/", "//")
         dir2 = self.entry2.get()
         dir2 = dir2.replace("/", "//")
         #create a new variable that selects all the files with .txt extension in source directory
         dirText = dir1 + "//*.txt"
-        #create a variable to store the current date and time.  Note: date_now is an instance of
-        #datetime class and we can use methods on date_now such as date_now.hour, etc to return int values.
         date_now = datetime.datetime.now()
         #create a list variable to store all the .txt files in the source directory using the glob module's
         #glob method.
